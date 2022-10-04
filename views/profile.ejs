@@ -1,0 +1,82 @@
+
+<%- include('partials/logged-in-header') -%>
+<!--Welcome User Section-->
+<section>
+    <div>
+        <div>
+            <div class="my-5">
+                <h1>Welcome, <span><%=user.userName%></span>!</h1>
+                
+            </div>
+            <div>
+                <div>
+                    <dl>
+                        <dt>Username:</dt>
+                        <dd><%=user.userName%></dd>
+                        <dt>E-mail:</dt>
+                        <dd><%=user.email%></dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="container card-container my-2">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <div>
+            <h2>Add a restaraunt review</h2>
+            <form action="/post/createPost" enctype="multipart/form-data" method="POST">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Restaurant Name</label>
+                    <input type="text" name="title" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="country" class="form-label">Which island are you posting from?</label>
+                    <select aria-label="Default select example" name="country" id="country" class="form-select" name="country">
+                        <option selected>Select Island</option>
+                        <option value="Grand Bahama">Grand Bahama</option>
+                        <option value="New Providence">New Providence</option>
+                        <option value="Abaco">Abaco</option>
+                        <option value="Bimini">Bimini</option>
+                        <option value="Andros">Andros</option>
+                        <option value="Long Island">Long Island</option>
+
+                    </select>
+                </div>
+                </div>
+                <div class="mb-3">
+                    <label for="caption" class="form-label">Description</label>
+                    <textarea name="caption" id="" cols="30" rows="10" style="resize:vertical" class="form-control" id="directions" placeholder="Place your review here."></textarea>
+                </div>
+                <!-- <div class="mb-3">
+                    <label for="rating">Rating</label>
+                    
+                </div> -->
+                <div class="mb-3">
+                    <label for="imgUpload" class="form-label">Image</label>
+                    <input type="file" name="file" class="form-control" id="imageUpload">
+                </div>
+                <button type="submit" value="upload" class="btn btn-primary">Submit</button>
+            </form>
+            
+        </div>
+    </div>
+    <!-- <div class="col-6">
+        <ul class="row list-unstyled">
+        <% for(var i=0; i<posts.length; i++) {%>
+          <li class="col-6 justify-content-between mt-5">
+            <a href="/post/<%= posts[i]._id%>">
+              <img class="img-fluid" src="<%= posts[i].image%>">
+            </a>
+          </li>
+        <% } %>
+        </ul>
+        <div class="row justify-content-center mt-5">
+          <a class="btn btn-primary" href="/feed">Return to Feed</a>
+        </div>  
+      </div>  -->
+</div>
+
+
+<%- include('partials/footer') -%>

@@ -1,0 +1,74 @@
+<%- include ('partials/logged-in-header') -%>
+
+
+<div class="container card-container">
+    <div class="row">
+        <h1><%= post.title %></h1>
+        <p><%= post.caption %></p>
+        <p>By: <%= user.userName %></p>
+        <div class="col-md-6">
+          <img src="<%= post.image%>" class="img-fluid" alt="Responsive image">
+          <div class="row row-cols-4 pt-2">
+            <form
+              class="col-2"
+              action="/post/likePost/<%= post.id %>?_method=PUT"
+              method="POST"
+            >
+            <button class=" <%if(post.likes.includes(user.id)){ %> btn-liked <%} %>
+                btn btn-primary fa fa-heart" type="submit"></button>
+              </form>
+              <h3 class="col"><%= post.likes.length - 1 %></h3>
+              <form
+                class="col justify-content-end mr-5"
+                action="/post/bookmarkPost/<%= post.id %>?_method=PUT"
+                method="POST"
+              >
+              <button class="<%if(post.bookmarks.includes(user.id)){ %> bi bi-bookmark-fill<%} else { %> bi bi-bookmark <% }%>
+                btn btn-primary" type="submit"></button>
+              </form>
+
+              <%if(post.user == user.id){ %>
+                <form
+                  action="/post/deletePost/<%= post.id %>?_method=DELETE"
+                  method="POST"
+                  class="col-3"
+                >
+                  <button class="btn btn-primary fa fa-trash" type="submit"></button>
+                </form>
+                <%}%>
+            </div>
+        </div>
+        <div class="mt-5">
+            <p><%=post.cpation %></p>
+        </div>
+        <div class="mt-5">
+            <h2>Add a comment</h2>
+            <form action="/comment/createComment/<%=post._id%>" method="POST">
+                <div class="mb-3">
+                    <label for="comment" class="form-label">Comment</label>
+                    <input type="text" class="form-control" id="comment" name="comment">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <ul>
+            <% for(var i=0; i<comments.length; i++) {%>
+              <li class="col-6 justify-content-between mt-5 move-pin">
+                <!--Add user attribution-->
+                <span class="comment-user"><%= comments[i].createdBy%>:</span> <%= comments[i].comment%> 
+                <!--If comment was created by current user, then show delete button-->
+                <br> <%if(comments[i].createdById == user.id){ %>
+                      <form
+                        action="/comment/deleteComment/<%=post._id%>/<%= comments[i]._id %>?_method=DELETE"
+                        method="POST"
+                        >
+                        <button type="submit" class="btn btn-outline-danger">Delete</button>
+                      </form>
+                      <%}%>
+              </li>
+            <% } %>
+          </ul>
+    </div> 
+</div>
+
+<%- include('partials/footer') -%>
