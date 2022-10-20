@@ -55,6 +55,7 @@ module.exports = {
         title: req.body.title,
         image: result.secure_url,
         cloudinaryId: result.public_id,
+        rating: req.body.rating,
         caption: req.body.caption,
         country: req.body.country,
         likes: 0,

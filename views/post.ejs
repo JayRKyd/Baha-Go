@@ -5,7 +5,7 @@
     <div class="row">
         <h1><%= post.title %></h1>
         <p><%= post.caption %></p>
-        <p>By: <%= user.userName %></p>
+        <!-- <p>By: <%= user.userName %></p> -->
         <div class="col-md-6">
           <img src="<%= post.image%>" class="img-fluid" alt="Responsive image">
           <div class="row row-cols-4 pt-2">
@@ -38,9 +38,7 @@
                 <%}%>
             </div>
         </div>
-        <div class="mt-5">
-            <p><%=post.cpation %></p>
-        </div>
+        
         <div class="mt-5">
             <h2>Add a comment</h2>
             <form action="/comment/createComment/<%=post._id%>" method="POST">
@@ -70,5 +68,3 @@
           </ul>
     </div> 
 </div>
-
-<%- include('partials/footer') -%>

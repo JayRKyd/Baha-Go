@@ -14,7 +14,7 @@ router.get("/login", authController.getLogin);
 router.post("/login", authController.postLogin);
 router.get("/logout", authController.logout);
 router.get("/signup", authController.getSignup);
-router.get("/my-restaurant", ensureAuth, postsController.getPosts);
+router.get("/my-restaurant", ensureAuth, postsController.getRestaurants);
 router.get("/bookmarks", ensureAuth, postsController.bookmarkPost);
 router.post("/signup", authController.postSignup);
 router.get("/about", aboutController.getAbout);

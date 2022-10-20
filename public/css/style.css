@@ -5,7 +5,7 @@ body {
     background: #fff;
 }
 
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -49,10 +49,10 @@ body {
     background: #ffff;
 }
 
-/* .btn-sign-in:hover{
+.btn-sign-in:hover{
     background-color: #353be9;
     color: #ffff;
-} */
+}
 
 .modal-content {
     opacity: 0.95;
@@ -62,6 +62,15 @@ body {
 
 .form-group input {
     padding-left: 44px;
+}
+.findout {
+  
+  width: 50%;
+  margin: 0 auto;
+}
+
+.login-content {
+  margin: 0 auto;
 }
 
 .form-group::before {
@@ -175,12 +184,22 @@ input {
     background-color: #000;
     position: relative;
     width: 100%;
-    left: 0;
-    bottom: 0;
   }
   .footer-link {
     text-decoration: none;
 
+  }
+  
+  .extra-pad {
+    padding-bottom: 70px;
+  }
+
+  #more-pad {
+    padding-bottom: 30px;
+  }
+
+  .pad-top {
+    padding-top: 70px;
   }
 
   .appimg {
@@ -188,11 +207,13 @@ input {
     margin: 0 auto;
     text-align: center;
     display: block;
+    height: 7rem;
   }
 
-  .appleimg {
+  /* .appleimg {
     width: 65%;
-    margin-right: 180px;
+    margin-right: 0;
+    margin-left: 100px;
     
   }
 
@@ -200,7 +221,7 @@ input {
     margin-left: 120px;
     margin-right: 0;
     
-  }
+  } */
 
   .hidecomments {
     list-style: none;
@@ -227,3 +248,65 @@ input {
     list-style-type: none;
   }
   
+
+  
+
+  .give-space {
+    padding-bottom: 50px;
+  }
+
+  .star--amount-icon-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.star--amount {
+    margin-right: .1rem;
+}
+
+.star--container {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+.star {
+  font-size: 1.75rem;
+}
+
+.star--container label .star {
+  float: right;
+  color: var(--white);
+  padding-inline: .3rem;
+}
+
+.star--container .star:hover,
+.star--container label:hover~label .star {
+  color: #FFE55C;
+}
+
+.default--star {
+  color: #FFE55C;
+}
+
+/* HIDE RADIO */
+[type=radio] {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* IMAGE STYLES */
+[type=radio]+.star {
+  cursor: pointer;
+}
+
+  /* .borda {
+    border: 1px solid black;
+  } */
+
+  .special {
+    margin: 0 auto;
+    gap: 0;
+  }

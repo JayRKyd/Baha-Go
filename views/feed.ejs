@@ -1,5 +1,9 @@
 <%- include('partials/logged-in-header') -%>
-
+<script
+src="https://kit.fontawesome.com/b89dd87408.js"
+crossorigin="anonymous"
+defer
+></script>
 <div class="container card-container">
     <h1>Explore</h1>
     <div class="row row-cols-1 row-cols-md-3 g-4 pb-5">
@@ -11,6 +15,45 @@
                     <h5 class="card-title"><%=posts[i].title%></h5>
                     <p class="card-text"><i class="px-1 bi bi-heart"></i><%= posts[i].likes.length - 1 %></p>
                     <p class="card-text"><small class="text-muted">By: <%= userName[i]%></small></p>
+                    <p class="card-text">
+                        <div class="star--amount-icon-container">
+                            <%if (posts[i].rating == 4) { %>
+                                <span class="star--amount"><%= posts.rating %></span>
+                                <i class="post--star fa-solid fa-star"></i>
+                                <i class="post--star fa-solid fa-star"></i>
+                                <i class="post--star fa-solid fa-star"></i>
+                                <i class="post--star fa-solid fa-star"></i>
+                            <% } %>
+                            <%if (posts[i].rating == 3) { %>
+                                <span class="star--amount"><%= posts.rating %></span>
+                                <i class="post--star fa-solid fa-star"></i>
+                                <i class="post--star fa-solid fa-star"></i>
+                                <i class="post--star fa-solid fa-star"></i>
+                                
+                            <% } %>
+
+                            <%if (posts[i].rating == 2) { %>
+                                <span class="star--amount"><%= posts.rating %></span>
+                                <i class="post--star fa-solid fa-star"></i>
+                                <i class="post--star fa-solid fa-star"></i>
+                                
+                            <% } %>
+
+                            <%if (posts[i].rating == 1) { %>
+                                <span class="star--amount" ><%= posts.rating %></span>
+                                <i class="post--star fa-solid fa-star"></i>
+                                
+                            <% } %>
+                            
+                            <%if (posts[i].rating == null) { %>
+                                
+                                <span class="star--amount" ><%= posts.rating %></span>
+                                <i class="post--star fa-solid fa-star"></i>
+                                
+                            <% } %>
+                           
+                        </div>
+                    </p>
                     <p class="card-text"><%= posts[i].caption%></p>
                     <a href="/post/<%= posts[i]._id%>" class="btn btn-outline-primary">View Restaurant</a>
                 </div>
@@ -24,4 +67,4 @@
     </div>
 </div>
 
-<%- include('partials/footer') -%>
+

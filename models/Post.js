@@ -17,6 +17,12 @@ const PostSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
+  rating: {
+    type: Number,
+    required: true,
+    min: 0,
+    max: 5
+  },
   caption: {
     type: String,
     required: true,

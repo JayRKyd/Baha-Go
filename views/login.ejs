@@ -2,7 +2,7 @@
 
 
        
-        <section class="login py-5 bg-light mt-5 pb-5">
+        <section class="login py-5 bg-light mt-5 pb-5 ">
           <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
             <div class="alert alert-danger"><%= el.msg %></div>
             <% }) %> <% } %> <% if (locals.messages.info) { %> <%
@@ -11,25 +11,25 @@
     
          
             <% }) %> <% } %>
-          <div class="container">
-            <div class="row-page row g-0">
-              <div class="col-lg-5 borda">
+          <div class="container pt-5">
+            <div class="row-page row g-0 findout">
+              <!-- <div class="col-lg-5 borda">
                 <img src="/imgs/resize.png" class="img-fluid" alt="">
-              </div>
-              <div class="col-lg-7 text-center  py-2">
+              </div> -->
+              <div class="col-lg-7 text-center  py-2 login-content">
                 <form action="/login" method="POST">
-                  <div class="form-row py-2 pt-2">
-                    <div class="col-lg-10">
-                      <p class="pt-3 pb-2">New here? <a href="/signup" class="sign">Create an account!</a></p>
+                  <div class="form-row py-2 pt-4">
+                    <div class="col-lg-15">
+                      <p class="pt-3 pb-4">New here? <a href="/signup" class="sign">Create an account!</a></p>
                       <input type="email" class="inp" placeholder="Enter E-mail" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
                     </div>
                   </div>
-                  <div class="form-row pt-4 pb-2">
-                    <div class="col-lg-10">
+                  <div class="form-row pt-4 pb-4">
+                    <div class="col-lg-15">
                       <input type="password" class="inp" placeholder="Enter Password" id="exampleInputPassword1" name="password">
                     </div>
-                    <div class="form-row pt-4 pb-2">
-                      <div class="col-lg-10">
+                    <div class="form-row pt-4 pb-4">
+                      <div class="col-lg-15">
                         <button type="submit" class="btn1">Login</button>
                       </div>
                   </div>
@@ -39,5 +39,7 @@
           </div>
         </section>   
         
+
+          
 
   
