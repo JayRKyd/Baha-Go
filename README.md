@@ -71,13 +71,14 @@ _In order to clone a local copy of this repository, please follow the steps belo
 <br/>
 <br/>
 
-## Roadmap (still to be added in v2)
+## Roadmap (still to be added in v3)
 
 - [ ] Implement a Dollar Rating System
 - [ ] Modernize feed page
 - [ ] Revamp comment section
 - [ ] Add Pagination for user posts
-- [ ] Fix the My Restaurant & Favorite Restaurants page
+- [ ] Favorite Restaurants page
+
 
 ## Lessons Learned
 
