@@ -2,7 +2,7 @@
 
 
        
-        <section class="login py-5 bg-light mt-5 pb-5 ">
+        <section class="login py-5 bg-light mt-5 pb-5 section-bottom">
           <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
             <div class="alert alert-danger"><%= el.msg %></div>
             <% }) %> <% } %> <% if (locals.messages.info) { %> <%
@@ -11,7 +11,7 @@
     
          
             <% }) %> <% } %>
-          <div class="container pt-5">
+          <div class="container pt-5 last-btn">
             <div class="row-page row g-0 findout">
               <!-- <div class="col-lg-5 borda">
                 <img src="/imgs/resize.png" class="img-fluid" alt="">
@@ -39,7 +39,7 @@
           </div>
         </section>   
         
-
+        <%- include('partials/footer') -%>
           
 
   
